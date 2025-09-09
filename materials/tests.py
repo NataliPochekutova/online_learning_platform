@@ -79,7 +79,9 @@ class SubscriptionTest(APITestCase):
 
     def test_subscription_delete(self):
         """Тестирование удаления подписки"""
-        self.subscription = Subscription.objects.create(course=self.course, user=self.user)
+        self.subscription = Subscription.objects.create(
+            course=self.course, user=self.user
+        )
         data = {"course": self.course.pk, "user": self.user}
         response = self.client.post("/subscription/", data)
 
