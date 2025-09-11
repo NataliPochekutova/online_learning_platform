@@ -1,12 +1,14 @@
-from rest_framework.fields import SerializerMethodField
 from rest_framework import serializers
+from rest_framework.fields import SerializerMethodField
 
 from materials.models import Course, Lesson, Subscription
 from materials.validators import validate_third_party_resources
 
 
 class LessonSerializer(serializers.ModelSerializer):
-    url_video = serializers.URLField(required=False, validators=[validate_third_party_resources])
+    url_video = serializers.URLField(
+        required=False, validators=[validate_third_party_resources]
+    )
 
     class Meta:
         model = Lesson
