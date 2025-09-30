@@ -5,7 +5,8 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-load_dotenv(dotenv_path='/online_learning_platform/.env')
+load_dotenv()
+print("SECRET_KEY from env:", os.getenv("SECRET_KEY"))
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
